@@ -272,7 +272,7 @@
                 <li>
                     <strong>Data Acquisition:</strong>
                     <ul>
-                        <li><strong>Smart Crawlers:</strong> Advanced crawlers intelligently locate and identify reliable data sources, minimizing manual input.</li>
+                        <li><strong>Smart Crawlers:</strong> Advanced crawlers view web pages through a specialized "AI friendly" renderer and uses reasoning to locate data sources.</li>
                     </ul>
                 </li>
                 <li>
@@ -324,9 +324,14 @@
                     <ul>
                         <li><strong>Smart Crawlers:</strong> Located reliable data sources for 238 out of 295 school districts: updates to our rendering engine will allow capture of the remaining sources.</li>
                         <li><strong>Data Processing Bots:</strong> Pulled and processed data from 98 districts using a prototype limited to a subset of data sources: we passed over sources stored on third party platforms like sharepoint, zoom archives and google drive for this trial.</li>
-                        <li><strong>Data Cleanup:</strong>Used optical character recognition to unlock data stored as images of physical documents and LLM document searches to appropriately classify and date files without usable names: e.g. formed like <i>0000-FFFF-0000-FFFF.pdf</i></li>
+                        <li><strong>Data Cleanup:</strong>
+                            <ul><li>Encountered many documents stored as images of physical documents, added OCR capabilities in order to unlock their data.</li>
+                                <li>Encountered many files with ambiguous names e.g. <i>0000-FFFF-0000-FFFF.pdf</i>, built an agent to search through files and determine a correct document type and date for consistent naming across entities.</li>
+                                <li>Discovered many varying methods of hosting videos of meetings, we gave the bot the ability to pull audio from these meetings as mp3s regardless of their platform (e.g. youtube, vimeo, zoom, other niche providers).</li>
+                                <li>Transcribed meeting audio and appropriately classified them by meeting type and date by scanning for context within the resulting text.</li>
+                            </ul>
                     </ul>
-					<p>Captured data encompasses 33% of all Washington State schoolboards, covering 36 of 39 counties and fifteen years of archival data (2010-2025).</p>
+					<p>Captured data encompasses agendas, meeting minutes and recording transcripts for meetings between 2010 and 2025, covering 33% of all Washington State schoolboards and 93% of counties.</p>
                 </li>
                 <li>
                     <strong>Data Insights:</strong>
