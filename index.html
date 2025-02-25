@@ -253,19 +253,19 @@
 
             <h3>Project Overview</h3>
             <p>We applied our Autonomous Data Pipeline to analyze school board meeting minutes, agendas, videos, and ancillary documents across Washington State from 2010 to 2025. This extensive dataset encompasses:</p>
+            <p>The data was collected from a single host using a mix of remote and local LLMs over the course of two hours. We throttled collection per source to 1 request/second in order to minimize impact to data sources. We had queued several thousand additional meeting recordings, but skipped them in order to focus on text documents.</p>
             <ul>
                 <li><strong>17,304 Documents</strong></li>
                 <li><strong>665 Meeting Recordings</strong></li>
                 <li><strong>12,070 Processed Meeting Minutes</strong></li>
             </ul>
-            <p>The data was collected from a single host using a mix of remote and local LLMs over the course of two hours. We throttled collection per source to 1 request/second in order to minimize impact to data sources. We had queued several thousand additional meeting recordings, but skipped them in order to focus on text documents.</p>
 
             <h3>Results</h3>
             <ol>
                 <li>
                     <strong>Data Acquisition Success:</strong>
                     <ul>
-                        <li><strong>Smart Crawlers:</strong> Located reliable data sources for 238 out of 295 school districts: updates to our rendering engine will allow capture of the remaining sources.</li>
+                        <li><strong>Smart Crawlers:</strong> Located reliable data sources for 238 out of 295 school districts: updates to our rendering engine and/or integration of services like <a href="https://firecrawl.dev">firecrawl.dev</a> will allow capture of the remaining sources.</li>
                         <li><strong>Data Processing Bots:</strong> Pulled and processed data from 98 districts using a prototype limited to a subset of data sources: we passed over sources stored on third party platforms like sharepoint, zoom archives and google drive which would have required additional processing for this trial.</li>
                         <li><strong>Data Cleanup:</strong>
                             <ul><li>Encountered many documents stored as images of physical documents, added OCR capabilities in order to unlock their data while continuing to leverage cost-effective text-only AI models.</li>
